@@ -32,9 +32,9 @@ const saveUrl = async(req, res) =>{
     //save to the database
     const urlEntry = new Url({originalUrl, shortUrl})
     await urlEntry.save();
-    res.json(urlEntry)
+    return res.json(urlEntry)
   } catch (error) {
-    res.send(error.message)
+    return res.send(error.message)
   }
 }
 

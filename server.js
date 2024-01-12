@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: true}));
 //custome middleware
 app.use('/api/v1',router)
 
-const start = async()=>{
+(async ()=>{
 try {
     await connect (process.env.DATABASE_CONNECTION)
     console.log("connected to database sucessfully")
@@ -22,5 +22,4 @@ try {
 } catch (error) {
     console.log(error.message)
 }
-}
-start();
+})()
